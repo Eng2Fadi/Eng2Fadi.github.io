@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fadi.AI — AI & Automation Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+–bg: #f0f4ff;
+–ink: #0b1f5e;
+–accent: #1a4fd6;
+–accent2: #dce8ff;
+–orange: #f97316;
+–orange2: #fff0e6;
+–muted: #5c6f9a;
+–card: #ffffff;
+–border: #d0dcf5;
+–radius: 16px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–bg);
+color: var(–ink);
+overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; align-items: center; justify-content: space-between;
+padding: 18px 6vw;
+background: rgba(255,255,255,0.92);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid var(–border);
+}
+.logo {
+font-family: ‘Syne’, sans-serif;
+font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em;
+color: var(–ink); text-decoration: none;
+}
+.logo span { color: var(–orange); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+font-size: 0.9rem; font-weight: 500;
+color: var(–muted); text-decoration: none;
+transition: color .2s;
+}
+.nav-links a:hover { color: var(–ink); }
+.nav-cta {
+background: var(–orange); color: #fff !important;
+padding: 9px 22px; border-radius: 100px;
+font-size: 0.85rem !important; font-weight: 500 !important;
+transition: background .2s !important;
+}
+.nav-cta:hover { background: #ea6a00 !important; color: #fff !important; }
+
+/* ── HERO ── */
+.hero {
+min-height: 100vh;
+display: flex; flex-direction: column; justify-content: center;
+padding: 140px 6vw 100px;
+position: relative; overflow: hidden;
+background: #ffffff;
+}
+.hero-badge {
+display: inline-flex; align-items: center; gap: 8px;
+background: var(–orange2); color: var(–orange);
+font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em;
+padding: 6px 14px; border-radius: 100px; margin-bottom: 28px;
+width: fit-content;
+}
+.hero-badge .dot { width: 7px; height: 7px; background: var(–orange); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+.hero h1 {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(3rem, 7vw, 6rem);
+font-weight: 800; line-height: 1.05;
+letter-spacing: -0.03em;
+max-width: 820px;
+margin-bottom: 28px;
+animation: fadeUp .7s ease both;
+}
+.hero h1 em { color: var(–accent); font-style: normal; }
+
+.hero p {
+font-size: clamp(1rem, 1.5vw, 1.2rem);
+color: var(–muted); max-width: 520px;
+line-height: 1.7; margin-bottom: 44px;
+animation: fadeUp .7s .15s ease both;
+}
+.hero-actions {
+display: flex; gap: 16px; flex-wrap: wrap;
+animation: fadeUp .7s .25s ease both;
+}
+.btn-primary {
+background: var(–orange); color: #fff;
+padding: 14px 32px; border-radius: 100px;
+font-size: 0.95rem; font-weight: 500;
+text-decoration: none; transition: background .2s, transform .2s;
+}
+.btn-primary:hover { background: #ea6a00; transform: translateY(-2px); }
+.btn-secondary {
+border: 1.5px solid var(–border); color: var(–ink);
+padding: 14px 32px; border-radius: 100px;
+font-size: 0.95rem; font-weight: 500;
+text-decoration: none; transition: border-color .2s, transform .2s;
+}
+.btn-secondary:hover { border-color: var(–ink); transform: translateY(-2px); }
+
+/* hero grid decoration */
+.hero-deco {
+position: absolute; right: 6vw; top: 50%; transform: translateY(-50%);
+display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+opacity: .07; pointer-events: none;
+}
+.hero-deco span {
+display: block; width: 60px; height: 60px;
+background: var(–ink); border-radius: 12px;
+}
+
+/* stats strip */
+.stats {
+display: flex; gap: 48px; flex-wrap: wrap;
+padding: 28px 6vw;
+border-top: 1px solid var(–border);
+border-bottom: 1px solid var(–border);
+background: var(–accent);
+animation: fadeUp .7s .35s ease both;
+}
+.stat-item { display: flex; flex-direction: column; gap: 4px; }
+.stat-num {
+font-family: ‘Syne’, sans-serif;
+font-size: 2rem; font-weight: 800; color: #ffffff;
+}
+.stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SECTIONS ── */
+section { padding: 100px 6vw; }
+.section-tag {
+font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+text-transform: uppercase; color: var(–accent);
+margin-bottom: 16px;
+}
+.section-title {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 800; letter-spacing: -0.02em;
+margin-bottom: 16px; line-height: 1.1;
+}
+.section-sub {
+color: var(–muted); font-size: 1.05rem;
+line-height: 1.7; max-width: 520px; margin-bottom: 60px;
+}
+
+/* ── SERVICES ── */
+#services { background: var(–card); }
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 24px;
+}
+.service-card {
+background: var(–bg);
+border: 1px solid var(–border);
+border-radius: var(–radius);
+padding: 36px 32px;
+transition: transform .25s, box-shadow .25s, border-color .25s;
+cursor: default;
+}
+.service-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 20px 60px rgba(249,115,22,.1);
+border-color: var(–orange);
+}
+.service-icon {
+width: 52px; height: 52px;
+background: var(–orange2); border-radius: 14px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.5rem; margin-bottom: 24px;
+}
+.service-card h3 {
+font-family: ‘Syne’, sans-serif;
+font-size: 1.15rem; font-weight: 700;
+margin-bottom: 12px;
+}
+.service-card p { color: var(–muted); font-size: 0.92rem; line-height: 1.7; }
+
+/* ── PORTFOLIO ── */
+#portfolio { background: var(–bg); }
+.portfolio-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 24px;
+}
+.project-card {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: var(–radius);
+overflow: hidden;
+transition: transform .25s, box-shadow .25s;
+}
+.project-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 50px rgba(0,0,0,.08);
+}
+.project-thumb {
+height: 200px;
+display: flex; align-items: center; justify-content: center;
+font-size: 3rem;
+position: relative; overflow: hidden;
+}
+.project-thumb::after {
+content: ‘’; position: absolute; inset: 0;
+background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,.04));
+}
+.project-body { padding: 28px; }
+.project-tag {
+font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+text-transform: uppercase; color: var(–orange);
+background: var(–orange2); padding: 4px 10px; border-radius: 100px;
+display: inline-block; margin-bottom: 12px;
+}
+.project-body h3 {
+font-family: ‘Syne’, sans-serif;
+font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;
+}
+.project-body p { color: var(–muted); font-size: 0.88rem; line-height: 1.65; }
+
+/* ── CONTACT ── */
+#contact { background: var(–card); }
+.contact-wrap {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 80px; align-items: start;
+}
+.contact-info h2 {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(1.8rem, 3vw, 2.6rem);
+font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px;
+}
+.contact-info p { color: var(–muted); line-height: 1.7; margin-bottom: 36px; }
+.contact-links { display: flex; flex-direction: column; gap: 16px; }
+.contact-link {
+display: flex; align-items: center; gap: 14px;
+text-decoration: none; color: var(–ink);
+padding: 16px 20px;
+border: 1px solid var(–border); border-radius: 12px;
+font-size: 0.92rem; font-weight: 500;
+transition: border-color .2s, background .2s;
+}
+.contact-link:hover { border-color: var(–orange); background: var(–orange2); }
+.contact-link .link-icon {
+width: 38px; height: 38px; border-radius: 10px;
+background: var(–orange2); display: flex; align-items: center;
+justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+}
+
+/* form */
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-size: 0.85rem; font-weight: 500; color: var(–muted); }
+.form-group input, .form-group textarea {
+padding: 14px 18px;
+border: 1.5px solid var(–border); border-radius: 12px;
+background: var(–bg); font-family: ‘DM Sans’, sans-serif;
+font-size: 0.95rem; color: var(–ink);
+transition: border-color .2s;
+resize: none; outline: none;
+}
+.form-group input:focus, .form-group textarea:focus {
+border-color: var(–accent);
+}
+.form-submit {
+background: var(–orange); color: #fff;
+border: none; border-radius: 100px;
+padding: 15px 36px; font-size: 0.95rem; font-weight: 500;
+font-family: ‘DM Sans’, sans-serif;
+cursor: pointer; transition: background .2s, transform .2s;
+align-self: flex-start;
+}
+.form-submit:hover { background: #ea6a00; transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer {
+padding: 36px 6vw;
+border-top: 1px solid var(–border);
+display: flex; justify-content: space-between; align-items: center;
+flex-wrap: wrap; gap: 16px;
+background: var(–bg);
+}
+footer .logo { font-size: 1.1rem; }
+footer p { color: var(–muted); font-size: 0.85rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+.nav-links { display: none; }
+.hero-deco { display: none; }
+.contact-wrap { grid-template-columns: 1fr; gap: 48px; }
+.stats { gap: 28px; }
+footer { flex-direction: column; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="logo">Fadi<span>.AI</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> Available for Projects</div>
+  <h1>Building <em>AI-Powered</em><br>Digital Solutions</h1>
+  <p>I help businesses automate their workflows, build intelligent chatbots, and create scalable SaaS products — powered by modern AI.</p>
+  <div class="hero-actions">
+    <a href="#portfolio" class="btn-primary">View My Work</a>
+    <a href="#contact" class="btn-secondary">Get in Touch</a>
+  </div>
+  <div class="hero-deco">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+</section>
+
+<!-- STATS -->
+
+<div class="stats">
+  <div class="stat-item">
+    <span class="stat-num">20+</span>
+    <span class="stat-label">Projects Delivered</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">4</span>
+    <span class="stat-label">Core Service Areas</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Client Satisfaction</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">AI-First</span>
+    <span class="stat-label">Approach</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+
+<section id="services">
+  <p class="section-tag">What I Do</p>
+  <h2 class="section-title">Services</h2>
+  <p class="section-sub">From idea to deployment — I cover the full stack of AI and automation solutions.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3>AI Chatbots & Agents</h3>
+      <p>Custom AI assistants and autonomous agents for customer support, lead generation, and business automation — trained on your data.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <h3>Workflow Automation</h3>
+      <p>End-to-end automation with n8n and Make — connect your tools, eliminate manual tasks, and let systems run themselves.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚀</div>
+      <h3>SaaS Development</h3>
+      <p>Full-stack SaaS products built with modern frameworks — from MVP to production-ready, scalable and market-validated.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>YouTube & Content Strategy</h3>
+      <p>AI-assisted faceless YouTube channels, content pipelines, and monetization strategies for creators and brands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+  <p class="section-tag">My Work</p>
+  <h2 class="section-title">Recent Projects</h2>
+  <p class="section-sub">A selection of AI and automation projects delivered for clients.</p>
+  <div class="portfolio-grid">
+    <div class="project-card">
+      <div class="project-thumb" style="background:#e8f0ff">🤖</div>
+      <div class="project-body">
+        <span class="project-tag">AI Chatbot</span>
+        <h3>WhatsApp Business AI Assistant</h3>
+        <p>Intelligent WhatsApp chatbot using n8n + WhatsApp Business API for automated customer support and lead qualification.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb" style="background:#f0fdf4">⚡</div>
+      <div class="project-body">
+        <span class="project-tag">Automation</span>
+        <h3>Document Collection Automation</h3>
+        <p>Fully automated document collection pipeline for Arabic-speaking accountants — built with n8n and smart form processing.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb" style="background:#fff7ed">🎬</div>
+      <div class="project-body">
+        <span class="project-tag">Content Strategy</span>
+        <h3>Arabic Kids Edu Channel</h3>
+        <p>Faceless YouTube channel strategy for Arabic children's educational animation — niche research, script pipeline, and AI voiceover workflow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <p class="section-tag">Contact</p>
+      <h2>Let's Work Together</h2>
+      <p>Have a project in mind? I'd love to hear about it. Reach out and let's build something great.</p>
+      <div class="contact-links">
+        <a href="/cdn-cgi/l/email-protection#8acfe4eda4ccebeee3b3b3bacaede7ebe3e6a4e9e5e7" class="contact-link">
+          <span class="link-icon">✉️</span>
+          <span class="__cf_email__" data-cfemail="6c29020b422a0d080555555c2c0b010d0500420f0301">[email&#160;protected]</span>
+        </a>
+        <a href="https://wa.me/972599930699" target="_blank" class="contact-link">
+          <span class="link-icon">💬</span>
+          WhatsApp: +972 599 930 699
+        </a>
+        <a href="https://www.upwork.com" target="_blank" class="contact-link">
+          <span class="link-icon">💼</span>
+          Hire me on Upwork
+        </a>
+        <a href="https://khamsat.com/user/fadisaada" target="_blank" class="contact-link">
+          <span class="link-icon">🟢</span>
+          خمسات — fadisaada
+        </a>
+        <a href="https://www.linkedin.com/in/eng-fadi-abusaada" target="_blank" class="contact-link">
+          <span class="link-icon">🔗</span>
+          LinkedIn — Eng. Fadi Abu Saada
+        </a>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="John Doe" required />
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="hello@example.com" required />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <a href="#" class="logo">Fadi<span>.AI</span></a>
+  <p>© 2025 Fadi.AI — AI & Automation Specialist</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+function handleSubmit(e) {
+e.preventDefault();
+const btn = e.target.querySelector(’.form-submit’);
+btn.textContent = ‘Message Sent ✓’;
+btn.style.background = ‘#16a34a’;
+setTimeout(() => {
+btn.textContent = ‘Send Message →’;
+btn.style.background = ‘’;
+e.target.reset();
+}, 3000);
+}
+
+// Scroll reveal
+const observer = new I
