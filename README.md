@@ -22,6 +22,7 @@ Whether it's a custom AI chatbot, a complex n8n workflow, or a SaaS product from
 
 ## 📫 Connect with me
 - [GitHub](https://github.com/Eng2Fadi)
+- [LinkedIn](https://www.linkedin.com/in/eng-fadi-abusaada)
 - [Website](https://Eng2Fadi.github.io) (if applicable)
 
 ---
